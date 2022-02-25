@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 //@Scope("prototype")
-@Lazy
+//@Lazy
 public class CommentService {
 
     private final CommentRepository commentRepository;
