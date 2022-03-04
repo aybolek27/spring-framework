@@ -19,11 +19,15 @@ public class HomeController {
         return "home.html";
     }
 
-    @RequestMapping
+    @RequestMapping("/developer")
     public String home3(){
 
-        return "welcome .html";
+        return "welcome.html";
     }
 
+    @RequestMapping
+    public String home4(){
 
+        return "welcome.html";
+    }
 }
