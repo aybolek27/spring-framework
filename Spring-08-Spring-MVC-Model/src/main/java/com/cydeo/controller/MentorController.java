@@ -11,11 +11,12 @@ import java.util.List;
 
 
 @Controller
+@RequestMapping("/mentor")
 public class MentorController {
 
 
 
-    @RequestMapping("/mentor")
+    @RequestMapping("/list")  // localhost:8080/mentor/list
     public String mentor(Model model){
 /*
         Mentor mentor1=new Mentor("Allen", "Parker", 27, Gender.MALE);
