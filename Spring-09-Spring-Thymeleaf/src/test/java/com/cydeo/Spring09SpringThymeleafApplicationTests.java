@@ -1,10 +1,10 @@
-package com.cydeo.model;
+package com.cydeo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Spring09ThymeleafApplicationTests {
+class Spring09SpringThymeleafApplicationTests {
 
     @Test
     void contextLoads() {
