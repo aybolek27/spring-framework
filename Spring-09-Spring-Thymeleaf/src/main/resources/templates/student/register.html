@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2> Welcome New Student</h2>
+
+<!--to display all elements of the list -->
+<h2 th:text="${students}"></h2>
+
+<!--to display selected elements from the list -->
+
+<h4 th:text="${students.get(0).getFirstName()}"></h4>
+<h4 th:text="${students.get(0).getLastName()}"></h4>
+<h4 th:text="${students.get(0).getAge()}"></h4>
+<h4 th:text="${students.get(0).getState()}"></h4>
+
+<!--Concatenation   -->
+
+<h2 th:text="${'Welcome ' + students.get(0).getFirstName()}"></h2>
+<h2 th:text="${'Welcome ' + students.get(0).getLastName()}"></h2>
+
+<!--second way of concatinating -->
+<h4 th:text=" 'First Name: ' + ${students.get(0).getFirstName()}"></h4>
+<h4 th:text="'Last Name: ' + ${students.get(0).getLastName()}"></h4>
+<h4 th:text="'Student Age: ' + ${students.get(0).getAge()}"></h4>
+<h4 th:text="'Student State: ' + ${students.get(0).getState()}"></h4>
+
+<h4 th:text=" 'Welcome ' + ${students.get(0).getFirstName()}"></h4>
+
+<!-- Link -->
+<!-- Absolute URLs: are used to build link that pointed to other servers -->
+<a th:href="@{https://cydeo.com}">Cydeo Home Page</a><br>
+
+<!-- Relative URLs: starting with / will be automatically prefixed by the application context name,, will make navigate to end points-->
+<a th:href="@{/student/welcome}">Link1</a><br>
+
+<!-- Adding parameters to link -->
+<a th:href="@{/student/welcome(id=3)}">Link2</a><br>
+<!-- Adding parameters to link where we pull data from controller-->
+<a th:href="@{/student/welcome(id=${students.get(0).getFirstName()})}">Link3</a><br>
+
+<!-- Iteration -->
+<ul>
+    <li th:each="name : ${students}" th:text="${name.firstName}"></li>
+</ul>
+
+
+</body>
+</html>
