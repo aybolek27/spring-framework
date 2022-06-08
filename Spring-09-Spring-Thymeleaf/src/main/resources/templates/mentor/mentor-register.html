@@ -1,48 +1,63 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
 </head>
+
+<!--whole body is aligned center-->
 <div align="center">
 <body>
 
-<h2>Mentor Registration form</h2>
+  MENTOR REGISTRATION FORM!!!
 
-<form th:action="@{/mentor/confirm}" method="post" th:object="${mentor}">
-    <label>First Name</label>
-    <input type="text" id="FirstName" th:field="*{firstName}"><br><br>
+<!--Start of the Form-->
+<!--  th:object="${mentor}" ------ to bring the object from controller we need to use th:object-->
+<!--  th:action="@{/mentor/confirm}" method="post" ------------ to retrieve values collected from form fields -->
+  <form th:action="@{/mentor/confirm}" method="post" th:object="${mentor}">
 
-    <label>Last Name</label>
-    <input type="text" id="LastName" th:field="*{lastName}"><br><br>
+<!--    First name field  -->
+    <label>First Name:</label>
+    <input type="text" id="FirstName" th:field="*{firstName}"><br>
 
-    <label>Email</label>
-    <input type="text" id="Email" th:field="*{email}"><br><br>
+    <!--    Last name field  -->
+    <label>Last Name:</label>
+    <input type="text" id="LastName" th:field="*{lastName}"><br>
+
+    <!--    Email field  -->
+    <label>Email:</label>
+    <input type="text" id="email" th:field="*{email}"><br>
 
 
+    <!--    Graduated field  -->
+    <label>Graduated:</label>
+    <input type="checkbox" th:field="*{graduated}"><br>
 
-    <label>Graduated</label>
-    <input type="checkbox" th:field="*{graduated}"><br><br>
 
-    <label>Gender</label>
+    <!--    Gender radio field  -->
+    <label>Gender:</label>
     <input type="radio" value="Male" th:field="*{gender}">Male
-    <input type="radio" value="Female" th:field="*{gender}">Female<br><br>
+    <input type="radio" value="Male" th:field="*{gender}">Female<br>
 
 
-    <label>Batch Number</label>
+    <!--    Batch Number dropdown field  -->
+    <label>Batch Number:</label>
     <select th:field="*{batch}">
-        <option th:each="theBatch : ${batchList}" th:value="${theBatch}" th:text="${theBatch}"></option>
-    </select><br><br>
+      <option th:each="theBatch : ${batchList}" th:value="${theBatch}" th:text="${theBatch}"></option>
+    </select><br>
 
-    <label>Company</label>
-    <textarea th:field="*{company}"></textarea><br><br>
+      <!--    Company text area field  -->
+      <label>Company:</label>
+      <textarea th:field="*{company}"></textarea><br>
 
-    <button type="submit"> Register</button>
+    <!-- Submit button-->
+      <button type="submit">Register</button>
 
 
 
-</form>
 
+  </form>
 
 </body>
 </div>
