@@ -21,10 +21,10 @@ public class StudentController {
         model.addAttribute("subject", subject);
         //create some random student id (0-1000) and show it in your UI
 
-//        Random r = new Random();
-//        int studentID = r.nextInt(1001);
-//        model.addAttribute("StudentID", studentID);
-//
+        Random r = new Random();
+        int studentID = r.nextInt(1001);
+        model.addAttribute("StudentID", studentID);
+
         int studentId= new Random().nextInt(1001);
         model.addAttribute("id", studentId);
 

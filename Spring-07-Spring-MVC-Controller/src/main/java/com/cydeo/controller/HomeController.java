@@ -16,7 +16,7 @@ public class HomeController {
     @RequestMapping("/welcome")
     public String home2(){
 
-        return "home.html";
+        return "welcome.html";
     }
 
     @RequestMapping("/developer")
