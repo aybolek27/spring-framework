@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CarRepository extends JpaRepository<Car, Long> {
+
+    ///if ready methods is not enough, we can create other method implementations here
 }
