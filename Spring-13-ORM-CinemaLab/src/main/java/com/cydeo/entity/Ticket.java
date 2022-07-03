@@ -17,7 +17,7 @@ public class Ticket extends BaseEntity{
     private Integer seatNumber;
     private Integer rowNumber;
 
-    @Column(name = "DATE")
+    @Column
     private LocalDateTime dateTime;
 
     @ManyToOne(fetch = FetchType.LAZY)
